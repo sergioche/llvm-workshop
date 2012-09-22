@@ -1,0 +1,12 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x7ffe6a408980 [shape=record,label="{entry:\l  %call = call i8* @malloc(i64 10)\l  %0 = call i64 @llvm.objectsize.i64(i8* %call, i1 false)\l  %cmp = icmp ne i64 %0, -1\l  br i1 %cmp, label %cond.true, label %cond.false\l|{<s0>T|<s1>F}}"];
+	Node0x7ffe6a408980:s0 -> Node0x7ffe6a4089d0;
+	Node0x7ffe6a408980:s1 -> Node0x7ffe6a408a20;
+	Node0x7ffe6a4089d0 [shape=record,label="{cond.true:                                        \l  %call3 = call i8* @__strcpy_chk(i8* %call, i8* getelementptr inbounds ([12 x i8]* @.str, i32 0, i32 0), i64 %0) nounwind\l  br label %cond.end\l}"];
+	Node0x7ffe6a4089d0 -> Node0x7ffe6a408a70;
+	Node0x7ffe6a408a20 [shape=record,label="{cond.false:                                       \l  %call4 = call i8* @__inline_strcpy_chk(i8* %call, i8* getelementptr inbounds ([12 x i8]* @.str, i32 0, i32 0))\l  br label %cond.end\l}"];
+	Node0x7ffe6a408a20 -> Node0x7ffe6a408a70;
+	Node0x7ffe6a408a70 [shape=record,label="{cond.end:                                         \l  %call5 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([4 x i8]* @.str1, i32 0, i32 0), i8* %call)\l  ret i32 0\l}"];
+}
